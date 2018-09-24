@@ -1,3 +1,12 @@
+#
+#Saehej Kang
+#skang26
+#9/24/18
+#
+#LAB 0
+#Section 14
+#Purpose of lab is to work with python and complete a simple task. Ask for user input and manipulate values given and print out in specific format.
+
 import unittest
 import io, sys
 from planets import *
@@ -28,6 +37,13 @@ class Test_planets(unittest.TestCase):
         #print(student_output.getvalue().strip())
         self.assertEqual(expected_out, student_output.getvalue().strip())
 
+    def test_04(self):
+        sys.stdin = io.StringIO("0")
+        sys.stdout = student_output = io.StringIO()
+        expected_out = "What do you weigh on earth? \nOn Mars you would weigh 0.00 pounds.\nOn Jupiter you would weigh 0.00 pounds."
+        weight_on_planets()
+        #print(student_output.getvalue().strip())
+        self.assertEqual(expected_out, student_output.getvalue().strip())
 
 
 if __name__ == "__main__":
